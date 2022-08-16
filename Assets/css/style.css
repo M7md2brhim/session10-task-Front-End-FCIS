@@ -1,0 +1,193 @@
+:root {
+  --primary-color: #fec824;
+  --dark-color: #000;
+  --light-color: #fff;
+  --semi-light: #f7f7f7;
+  --gray-color: #808080;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  height: 200vh; /* for testing */
+}
+
+header {
+  width: 90%;
+  margin: 25px auto;
+
+  display: grid;
+  grid-template-areas: "logo link";
+}
+
+figure {
+  grid-area: logo;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+header figure img {
+  width: 180px;
+}
+
+header nav {
+  grid-area: link;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+header nav ul {
+  list-style-type: none;
+  padding-left: 0;
+  position: relative;
+}
+
+header nav ul li {
+  margin-right: 10px;
+  display: inline-block;
+  position: relative;
+}
+
+header nav ul li a {
+  text-decoration: none;
+  color: var(--dark-color);
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
+header nav ul li:first-child::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+header nav ul li:nth-child(2):hover:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 25px;
+  left: 25px;
+}
+
+header nav ul li:nth-child(3):hover:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 25px;
+  left: 15px;
+}
+
+header nav ul li:last-child:hover:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 25px;
+  left: 20px;
+}
+
+header nav ul a:hover {
+  color: var(--primary-color);
+}
+
+header nav ul a:focus {
+  color: var(--primary-color);
+}
+
+header nav ul a:focus-visible {
+  outline: none;
+  color: var(--primary-color);
+}
+
+section {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: repeat(3, auto);
+  width: 90%;
+  margin: 50px auto;
+}
+
+section img {
+  width: 100%;
+  grid-area: 1 / 1 / span 3 / 2;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+section div.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 35px;
+}
+
+section div.intro h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+section div.desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+section div.desc p {
+  color: var(--gray-color);
+  line-height: 2;
+}
+
+section div.send-email {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 30px;
+}
+
+section div.send-email input {
+  width: 100%;
+  height: 50px;
+  border-radius: 20px;
+  outline: none;
+  border: none;
+  padding: 30px;
+  background-color: #EEE;
+  position: relative;
+}
+
+section div.send-email::after {
+  content: "get updates";
+  position: absolute;
+  right: 110px;
+  background-color: var(--primary-color);
+  padding: 10px 30px;
+  border-radius: 10px;
+  color: var(--light-color);
+  cursor: pointer;
+}
+
+/* section div.send-email::after {
+  background-color: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+} */
